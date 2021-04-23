@@ -4,6 +4,7 @@
   </head>
   <body>
     <div class="container">
+      <h1>Currency Converter</h1>
       <form id="exchange-form">
         <input
           type="text"
@@ -11,15 +12,27 @@
           aria-label=""
           placeholder="Input amount of currency"
         />
-        <label for="">Base Currency:</label>
-        <select id="" class="custom-select">
-          <option selected disabled>Select Notes of Origin</option>
-        </select>
-        <select class="custom-select">
-          <option selected disabled>Converting to</option>
-        </select>
-        <button type="submit" class="btn btn-dark">Exchange Currencies</button>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="starting">Currency I have to convert:</label>
+            <select id="starting" class="custom-select">
+              <option selected disabled>Starting Tender</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="ending">Currency I want to convert to:</label>
+            <select id="ending" class="custom-select">
+              <option selected disabled>Ending Tender</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark">Convert</button>
       </form>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="show-results"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
