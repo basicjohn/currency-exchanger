@@ -3,8 +3,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyCodes from './js/codes.js';
-// import PairConversion from './js/exchange.js';
-import {convert} from './js/exchange.js';
+import PairConversion from './js/exchange.js';
+import {calculateConversion} from './js/exchange.js';
 
 
 function insertCurrency(response) {
@@ -20,7 +20,14 @@ function insertCurrency(response) {
 }
 
 
-
+function convert(amount, base, target) {
+  PairConversion.getConversionRate(base,target)
+    .then(function (response) {
+      let conversionRate = calculateConversion(response);
+      let converted = amount * conversionRate;
+      $("#show-results").text(`${converted}`);
+    });
+}
 
 $(document).ready(function () {
 

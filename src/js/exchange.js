@@ -27,12 +27,3 @@ export function calculateConversion(response) {
 }
 
 
-export function convert(amount, base, target) {
-  PairConversion.getConversionRate(base,target)
-    .then(function (response) {
-      let conversionRate = calculateConversion(response);
-      let converted = amount * conversionRate;
-      console.log(converted);
-      return converted;
-    });
-}
