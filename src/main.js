@@ -18,23 +18,29 @@ function insertCurrency(response) {
     console.log("The API wasn't able to generate form options");
   }
 }
-CurrencyCodes.getCurrencyCodes()
-  .then(function (response) {
-    insertCurrency(response);
-  });
 
 
 
-(document).ready(function () {
-  $("#exchange-form").submit(function (event) {
+
+$(document).ready(function () {
+
+  CurrencyCodes.getCurrencyCodes()
+    .then(function(response) {
+      insertCurrency(response);
+    });
+
+  $("button.convert").click(function(event) {
     event.preventDefault();
-    const amount =  $("#exchange-form input.form-control").val();
-    const baseInput = $("#exchange-form select#base option").selected();
-    const targetInput = $("#exchange-form select#target option").selected();
-    
-    let converted = convert(amount, baseInput, targetInput);
 
-    $("#show-results").html(`converted`);
+    const amount =  $("#exchange-form input.form-control").val();
+    console.log(amount);
+    const baseInput = $("#exchange-form select#base option:selected").val();
+    console.log(baseInput);
+    const targetInput = $("#exchange-form select#target option:selected").val();
+    console.log(targetInput);
+    let converted = convert(amount, baseInput, targetInput);
+    console.log(converted);
+    $("#show-results").text(`${converted}`);
 
     
 

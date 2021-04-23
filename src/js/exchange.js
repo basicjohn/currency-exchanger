@@ -17,7 +17,8 @@ export default class PairConversion {
 
 export function calculateConversion(response) {
   if (response) {
-    const conversionRate = response.conversion_rate.val();
+    const conversionRate = response.conversion_rate;
+    console.log(conversionRate);
     return conversionRate;
   }
   else {
@@ -30,6 +31,8 @@ export function convert(amount, base, target) {
   PairConversion.getConversionRate(base,target)
     .then(function (response) {
       let conversionRate = calculateConversion(response);
-      return amount * conversionRate;
+      let converted = amount * conversionRate;
+      console.log(converted);
+      return converted;
     });
 }
