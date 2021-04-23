@@ -3,7 +3,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyCodes from './js/codes.js';
-import {PairConversion,calculateExchange} from './js/exchange.js';
+
+import PairConversion from './js/exchange.js';
+import {calculateExchange} from './js/exchange.js';
 
 
 function insertCurrency(response) {
@@ -17,24 +19,27 @@ function insertCurrency(response) {
     console.log("The API wasn't able to generate form options");
   }
 }
+CurrencyCodes.getCurrencyCodes()
+  .then(function (response) {
+    insertCurrency(response);
+  });
 
-
-
+function convert(amount, base, target) {
+  PairConversion.getConversionRate(base,target)
+    .then(function (response) {
+      calculateExchange(response);
+    });
+}
 
 (document).ready(function () {
-  CurrencyCodes.getCurrencyCodes()
-    .then(function (response) {
-      insertCurrency(response);
-    });
   $("#exchange-form").submit(function (event) {
     event.preventDefault();
     const amount =  $("#exchange-form input.form-control").val();
-    const base = $("#exchange-form select#base").val();
-    const target = $("#exchange-form select#ending").val();
-    PairConversion.getConversionRate(base,target)
-      .then(function (response) {
-        calculateExchange(response);
-      });
+    const baseInput = $("#exchange-form select#base option").selected();
+    const targetInput = $("#exchange-form select#target option").selected();
+    
+    convert(amount, baseInput, targetInput);
+    
 
   });
 });

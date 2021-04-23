@@ -18,8 +18,9 @@ export default class PairConversion {
 export function calculateExchange(response) {
   if (response) {
     const conversionRate = response.conversion_rate.val();
-    }
-   else {
+    return conversionRate;
+  }
+  else {
     console.log("The API wasn't able to generate form options");
   }
-};
+}
