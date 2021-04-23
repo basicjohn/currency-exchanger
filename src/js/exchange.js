@@ -1,7 +1,7 @@
-export default class EpicImg {
-  static getImg(date) {
+export default class PairConversion {
+  static getCurrencyCodes() {
     const apiKey = process.env.API_KEY;
-    return fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${date}&end_date=${date}`)
+    return fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/codes`)
       .then(function (response) {
         if (!response.ok) {
           throw Error(response.statusText);
