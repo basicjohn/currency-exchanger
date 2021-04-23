@@ -18,7 +18,6 @@ export default class PairConversion {
 export function calculateConversion(response) {
   if (response) {
     const conversionRate = response.conversion_rate;
-    console.log(conversionRate);
     return conversionRate;
   }
   else {
