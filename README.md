@@ -25,7 +25,7 @@
 
 ## Description
 
-\_ This project is meant to work through the TDD process by creating classes and functions to calculate your age on other planets. \_
+\_ This project is created to convert currencies from one to another but using the ExchangeRate-API to find the exchange rate. \_
 
 ## Setup and Use
 

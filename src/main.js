@@ -2,20 +2,29 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import CurrencyCodes from './js/codes.js'
+import CurrencyCodes from './js/codes.js';
 
 
 function insertCurrency(response) {
-  if (response[0]) {
-    response[0].forEach(currency) {
+  if (response) {
+    response.supported_codes.forEach(function (currency) {
       let currencyName = currency[1];
       let currencyCode = currency[0];
-      $("form#exchange-form").append(`<option value="${currencyCode}">${currencyName}</option>`);
-    }
-
-
+      $("#exchange-form select").append(`<option value="${currencyCode}">${currencyName}</option>`);
+    });
   } else {
-    $(".show-img").empty();
-    $(".show-img").text("Woops, there's no photo from that date!");
+    console.log("The API wasn't able to generate form options");
   }
 }
+
+CurrencyCodes.getCurrencyCodes()
+  .then(function (response) {
+    insertCurrency(response);
+  });
+
+
+(document).ready(function () {
+  $("#exchange-form").submit(function (event) {
+    event.preventDefault();
+  });
+});
