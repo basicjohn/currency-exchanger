@@ -3,9 +3,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyCodes from './js/codes.js';
-
-import PairConversion from './js/exchange.js';
-import {calculateExchange} from './js/exchange.js';
+// import PairConversion from './js/exchange.js';
+import {convert} from './js/exchange.js';
 
 
 function insertCurrency(response) {
@@ -24,12 +23,7 @@ CurrencyCodes.getCurrencyCodes()
     insertCurrency(response);
   });
 
-function convert(amount, base, target) {
-  PairConversion.getConversionRate(base,target)
-    .then(function (response) {
-      calculateExchange(response);
-    });
-}
+
 
 (document).ready(function () {
   $("#exchange-form").submit(function (event) {
@@ -38,7 +32,10 @@ function convert(amount, base, target) {
     const baseInput = $("#exchange-form select#base option").selected();
     const targetInput = $("#exchange-form select#target option").selected();
     
-    convert(amount, baseInput, targetInput);
+    let converted = convert(amount, baseInput, targetInput);
+
+    $("#show-results").html(`converted`);
+
     
 
   });
