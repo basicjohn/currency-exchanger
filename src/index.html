@@ -5,34 +5,41 @@
   <body>
     <div class="container">
       <h1>Currency Converter</h1>
-      <form id="exchange-form">
-        <input
-          type="text"
-          class="form-control"
-          aria-label=""
-          placeholder="Input amount of currency"
-        />
-        <div class="row">
-          <div class="col-md-6">
-            <label for="base">Currency I have to convert:</label>
-            <select id="base" class="custom-select">
-              <option selected disabled>Starting Tender</option>
-            </select>
+      <div id="exchange-tool">
+        <form id="exchange-form">
+          <input
+            type="text"
+            class="form-control"
+            aria-label=""
+            placeholder="Input amount of currency"
+          />
+          <div class="row" id="currency-selection">
+            <div class="col-md-6">
+              <label for="base">Currency I have to convert:</label>
+              <select id="base" class="custom-select">
+                <option selected disabled>Starting Tender</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="target">Currency I want to convert to:</label>
+              <select id="target" class="custom-select">
+                <option selected disabled>Ending Tender</option>
+              </select>
+            </div>
           </div>
-          <div class="col-md-6">
-            <label for="target">Currency I want to convert to:</label>
-            <select id="target" class="custom-select">
-              <option selected disabled>Ending Tender</option>
-            </select>
-          </div>
-        </div>
-        <button type="button" class="btn btn-dark convert">Convert</button>
-      </form>
-      <div class="row">
-        <div class="col-md-12">
-          <div id="show-results"></div>
-        </div>
+          <button type="button" class="btn btn-dark convert">Convert</button>
+        </form>
       </div>
+      <div class="row">
+          <div class="col-md-12">
+            <h1>Results</h1>
+
+            <div id="show-results">
+
+
+            </div>
+          </div>
+        </div>
     </div>
   </body>
 </html>

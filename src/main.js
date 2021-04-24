@@ -5,8 +5,8 @@ import './css/styles.css';
 import CurrencyCodes from './js/codes.js';
 import PairConversion from './js/exchange.js';
 import {calculateConversion} from './js/exchange.js';
-
-
+// UI functions
+// Loop to insert each possible currency to the form dropdown
 function insertCurrency(response) {
   if (response) {
     response.supported_codes.forEach(function (currency) {
@@ -19,16 +19,17 @@ function insertCurrency(response) {
   }
 }
 
-
+// Function to convert input values to converted output
 function convert(amount, base, target) {
   PairConversion.getConversionRate(base,target)
     .then(function (response) {
       let conversionRate = calculateConversion(response);
       let converted = amount * conversionRate;
-      $("#show-results").text(`${converted}`);
+      $("#show-results").text(`<p>${converted}</p>`);
     });
 }
 
+// UI Logic
 $(document).ready(function () {
   CurrencyCodes.getCurrencyCodes()
     .then(function(response) {
