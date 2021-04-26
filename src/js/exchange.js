@@ -9,19 +9,15 @@ export default class PairConversion {
         return response.json();
       })
       .catch(function (error) {
-        return error;
+        throw error;
       });
   }
-}
-
-export function calculateConversion(response) {
-  if (response) {
+  static getRate(response) {
     const conversionRate = response.conversion_rate;
     return conversionRate;
   }
-  else {
-    console.log("The API wasn't able to generate form options");
-  }
 }
+
+
 
 

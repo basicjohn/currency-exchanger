@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyCodes from './js/codes.js';
 import PairConversion from './js/exchange.js';
-import {calculateConversion} from './js/exchange.js';
 // UI functions
 // Loop to insert each possible currency to the form dropdown
 function insertCurrency(response) {
@@ -23,9 +22,12 @@ function insertCurrency(response) {
 function convert(amount, base, target) {
   PairConversion.getConversionRate(base,target)
     .then(function (response) {
-      let conversionRate = calculateConversion(response);
+      let conversionRate = PairConversion.getRate(response);
       let converted = (amount * conversionRate).toFixed(2);
       $("#show-results").after(`<tr><td>${amount}</td><td>${base}</td><td>${target}</td><td>${converted}</td></tr>`);
+    })
+    .catch(function (error) {
+      $("table").after(`<p id="error">Looks like something went wrong!<br/>${error}</p>`);
     });
 }
 
@@ -42,6 +44,5 @@ $(document).ready(function () {
     const baseInput = $("#exchange-form select#base option:selected").val();
     const targetInput = $("#exchange-form select#target option:selected").val();
     convert(amount, baseInput, targetInput);
-    
   });
 });
