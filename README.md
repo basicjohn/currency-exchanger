@@ -6,10 +6,6 @@
 
 #### By _**John Edmondson**_
 
-### Git Pages Link
-
-[Currency Exchanger (GitHub Pages)](http://basicjohn.github.io/currency-exchanger)
-
 ## Technologies Used
 
 - HTML
