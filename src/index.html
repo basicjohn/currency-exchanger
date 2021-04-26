@@ -9,9 +9,12 @@
         Fill out the form below to convert the input amount to the desired
         currency
       </p>
+      <!-- Form -->
       <div id="exchange-tool">
         <form id="exchange-form">
+          <label for="currency-amount">Amount:</label>
           <input
+            id="currency-amount"
             type="text"
             class="form-control"
             aria-label=""
@@ -34,22 +37,20 @@
           <button type="button" class="btn btn-dark convert">Convert</button>
         </form>
       </div>
+      <!-- Results -->
       <div class="row">
         <div class="col-md-12">
           <h1>Results</h1>
-
-          <div id="">
-            <div class="row justify-content-center">
-              <div class="col-md-6">
-                <table style="width: 100%">
-                  <tr id="show-results">
-                    <th>Amount</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Result</th>
-                  </tr>
-                </table>
-              </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <table style="width: 100%">
+                <tr id="show-results">
+                  <th>Amount</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Result</th>
+                </tr>
+              </table>
             </div>
           </div>
         </div>

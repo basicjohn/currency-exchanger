@@ -37,7 +37,6 @@ $(document).ready(function () {
     .then(function(response) {
       insertCurrency(response);
     });
-
   $("button.convert").click(function(event) {
     event.preventDefault();
     const amount =  $("#exchange-form input.form-control").val();

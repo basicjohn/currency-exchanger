@@ -1,3 +1,4 @@
+// API call to gather currency codes
 export default class CurrencyCodes {
   static getCurrencyCodes() {
     const apiKey = process.env.API_KEY;

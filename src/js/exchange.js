@@ -1,3 +1,4 @@
+// API call to get the conversion rate between two currencies
 export default class PairConversion {
   static getConversionRate(base, target) {
     const apiKey = process.env.API_KEY;

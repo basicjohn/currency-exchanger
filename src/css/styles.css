@@ -1,10 +1,10 @@
-/* Montserrat */
+/* Global Styles */
 @font-face {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   src: local("Montserrat"), local("Montserrat-Regular"),
-    url("/fonts/Montserrat-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+    url("/fonts/Montserrat-Regular.ttf") format("truetype");
 }
 body {
   background-color: #f1f2f4;
@@ -23,6 +23,8 @@ p {
   text-align: center;
   margin-bottom: 25px;
 }
+
+/* Form Styles */
 #currency-selection {
   padding-top: 25px;
 }
@@ -39,7 +41,6 @@ button {
   margin-top: 32px;
 }
 input.form-control {
-  margin-top: 25px;
   background-color: #f1f2f4;
   border-color: #eaecf3;
   color: #000;
@@ -48,6 +49,8 @@ input.form-control {
   background-color: #f1f2f4;
   border-color: #eaecf3;
 }
+
+/* Result Styles */
 #show-results {
   background-color: #fff;
   border-radius: 15px;
