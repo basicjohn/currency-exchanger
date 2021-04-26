@@ -3,8 +3,12 @@
     <title>Currency Exchanger</title>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <h1>Currency Converter</h1>
+      <p>
+        Fill out the form below to convert the input amount to the desired
+        currency
+      </p>
       <div id="exchange-tool">
         <form id="exchange-form">
           <input
@@ -31,15 +35,25 @@
         </form>
       </div>
       <div class="row">
-          <div class="col-md-12">
-            <h1>Results</h1>
+        <div class="col-md-12">
+          <h1>Results</h1>
 
-            <div id="show-results">
-
-
+          <div id="">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <table style="width: 100%">
+                  <tr id="show-results">
+                    <th>Amount</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Result</th>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-    </div>
+      </div>
+    </main>
   </body>
 </html>

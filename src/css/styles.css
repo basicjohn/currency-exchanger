@@ -6,26 +6,26 @@
   src: local("Montserrat"), local("Montserrat-Regular"),
     url("/fonts/Montserrat-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
 }
-
 body {
   background-color: #f1f2f4;
 }
-
 .container {
   padding: 50px;
 }
-
 h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
+  text-align: center;
+  margin-top: 25px;
+}
+p {
   text-align: center;
   margin-bottom: 25px;
 }
 #currency-selection {
   padding-top: 25px;
 }
-
 #exchange-tool {
   border-color: #eaecf3;
   border-style: solid;
@@ -38,15 +38,28 @@ button {
   width: 100%;
   margin-top: 32px;
 }
-
 input.form-control {
   margin-top: 25px;
   background-color: #f1f2f4;
   border-color: #eaecf3;
   color: #000;
 }
-
 .custom-select {
   background-color: #f1f2f4;
   border-color: #eaecf3;
+}
+table,
+tr {
+  border-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#show-results {
+  background-color: #fff;
+}
+th,
+td {
+  text-align: center;
+  padding: 15px;
 }

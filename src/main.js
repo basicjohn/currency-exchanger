@@ -24,8 +24,8 @@ function convert(amount, base, target) {
   PairConversion.getConversionRate(base,target)
     .then(function (response) {
       let conversionRate = calculateConversion(response);
-      let converted = amount * conversionRate;
-      $("#show-results").text(`<p>${converted}</p>`);
+      let converted = (amount * conversionRate).toFixed(2);
+      $("#show-results").after(`<tr><td>${amount}</td><td>${base}</td><td>${target}</td><td>${converted}</td></tr>`);
     });
 }
 
@@ -42,5 +42,6 @@ $(document).ready(function () {
     const baseInput = $("#exchange-form select#base option:selected").val();
     const targetInput = $("#exchange-form select#target option:selected").val();
     convert(amount, baseInput, targetInput);
+    
   });
 });
