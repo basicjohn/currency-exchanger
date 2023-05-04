@@ -25,7 +25,7 @@
 
 ## Description
 
-_This project is created to convert currencies from one to another but using the ExchangeRate-API to find the exchange rate._
+_This project was created to convert currencies from one to another while using the ExchangeRate-API to find the exchange rate._
 
 ## Setup and Use
 
